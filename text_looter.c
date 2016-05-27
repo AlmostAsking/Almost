@@ -75,7 +75,7 @@ int main(int argc, char *argv[])
 	}
     }
 
-  printf("\nContents copied to %s bruh", filename);
+  printf("\nContents copied to %s", filename);
 
   fclose(fptr1);
   fclose(fptr2);
