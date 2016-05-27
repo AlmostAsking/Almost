@@ -15,7 +15,7 @@ int main(int argc, char *argv[])
   int i;
 
   //number of lines copied after keyword hit
-  int ballsack = atoi(argv[1]);
+  int noln = atoi(argv[1]);
   
   int match = 0;
 
@@ -67,7 +67,7 @@ int main(int argc, char *argv[])
 	    {
 	      printf("%s",line);
 	      fputs(line, fptr2);
-	      match = ballsack;
+	      match = noln;
 	      break;
 	    }
 	  i++;
