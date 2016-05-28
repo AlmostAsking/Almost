@@ -6,6 +6,8 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.Arrays;
 
+//implementation of a bit array to store data while taking up as little memory as possible
+
 class BitArray {
 
 	public int[] theArray;
@@ -22,6 +24,8 @@ class BitArray {
 			Arrays.fill(this.theArray, 0);
 		}
 	}
+
+//used to check the value of the bit at given index
 	
 	public boolean get(int n)
 	{
@@ -33,6 +37,8 @@ class BitArray {
 		return false;
 	}
 	
+//used to set the value of a bit at the given index
+
 	public void set(int bit)
 	{
 		int num = (int) Math.floor(bit/32);
@@ -48,6 +54,8 @@ class BloomFilter {
 	public int sz;
 	public int words;
 	
+//constructor for the bloom filter array
+
 	public BloomFilter(int m)
 	{
 		if(m < 0)
@@ -61,6 +69,9 @@ class BloomFilter {
 			this.words = 0;
 		}
 	}
+
+//several different hash functions used to encode given words
+//can add more if needed
 	
 	private int h1(String w)
 	{
@@ -111,6 +122,8 @@ class BloomFilter {
 		}
 		return (h % this.sz);
 	}
+
+//adds given string to bloom filter
 	
 	public void add(String w)
 	{
@@ -126,6 +139,8 @@ class BloomFilter {
 		this.theArr.set(ch5);
 		this.words++;
 	}
+
+//checks if word is in bloom filter array
 	
 	public boolean isIn(String w)
 	{
@@ -140,6 +155,8 @@ class BloomFilter {
 		}
 		return false;
 	}
+
+//checks accuracy base on how many hash functions and words are provided
 	
 	public double accuracy()
 	{
